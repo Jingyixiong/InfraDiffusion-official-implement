@@ -1,0 +1,47 @@
+# configs/config.yaml
+general:
+  seed: 1234
+  exp: "exp"
+  patch_size: [0.8, 0.8, 0.5]
+
+  use_boundary_constraint: true    # default to be true for using InfraDiffusion
+  
+  image_folder: "images"
+  verbose: "info"
+  ni: false
+  subset_start: -1
+  subset_end: -1
+  noise_type: "gaussian"
+  add_noise: false
+
+  rescaled: true  
+  uniform_dequantization: false
+  gaussian_dequantization: false
+  random_flip: true
+  logit_transform: false  
+
+  save_results: true   # whether to save the results or not
+  recompute: false     
+
+data_setting:  # general data settings
+  num_workers: 32
+  batch_size: 2
+  channels: 3
+  image_size: 256
+
+image_restore:    # image restoration parameters
+  deg: "inpainting"
+  sigma_y: 0.32
+  eta: 0.85
+  deg_scale: 4.0
+
+defaults:
+  - data: tunnels
+  - model: ddpm
+  - scheduler: ddpm_scheduler
+  - _self_
+
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}

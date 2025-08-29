@@ -1,0 +1,29 @@
+general:
+  infra_group: tunnel
+  patch_index: null
+masonry_bridges:
+  _target_: datasets.eval.EvaluationDataset
+  root: exp/datasets/masonry_bridges
+  patch_size:
+  - 0.8
+  - 0.8
+  - 0.5
+  infra_name: begc
+  sigma_y: 0.16
+tunnel:
+  _target_: datasets.eval.EvaluationDataset
+  root: exp/datasets/tunnels/wheatly_tunnel
+  patch_size:
+  - 0.8
+  - 0.8
+  - 0.5
+  infra_name: S-15
+  sigma_y: 0.64
+sam:
+  _target_: SAMPredictor
+  sam_model_type: vit_h
+  sam_checkpoint:
+    vit_b: exp/logs/sam/sam_vit_b_01ec64.pth
+    vit_l: exp/logs/sam/sam_vit_l_0b3195.pth
+    vit_h: exp/logs/sam/sam_vit_h_4b8939.pth
+  debug: true

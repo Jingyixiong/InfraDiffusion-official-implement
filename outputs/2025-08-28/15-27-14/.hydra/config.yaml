@@ -1,0 +1,34 @@
+model:
+  type: openai
+  use_fp16: true
+  class_cond: false
+  exp: ${general.exp}
+  in_channels: 3
+  out_channels: 3
+  num_channels: 256
+  num_heads: 4
+  num_res_blocks: 2
+  attention_resolutions: 32,16,8
+  dropout: 0.0
+  resamp_with_conv: true
+  learn_sigma: true
+  use_scale_shift_norm: true
+  resblock_updown: true
+  num_heads_upsample: -1
+  var_type: fixedsmall
+  num_head_channels: 64
+  image_size: ${general.image_size}
+  use_new_attention_order: false
+  use_boundary_constraint: false
+data:
+  dataset: cifar10
+classifier:
+  image_size: ${general.image_size}
+  classifier_attention_resolutions: 32,16,8
+  classifier_depth: 2
+  classifier_pool: attention
+  classifier_resblock_updown: true
+  classifier_width: 128
+  classifier_use_scale_shift_norm: true
+  classifier_scale: 1.0
+  classifier_use_fp16: true

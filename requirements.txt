@@ -1,0 +1,24 @@
+numpy>=1.23            # Array ops
+
+# --- Config & CLI ---
+hydra-core>=1.3.2      # Hydra configuration system
+omegaconf>=2.3.0       # Underlying config objects
+PyYAML>=6.0.1          # Manual YAML loading in legacy scripts
+
+# --- Data & Image IO / Processing ---
+pillow>=10.0.0         # PIL.Image for loading images
+opencv-python>=4.8.0   # cv2 used in SAM + operators
+scikit-image>=0.21.0   # polygon rasterization (skimage.draw)
+
+# --- Visualization ---
+matplotlib>=3.7.0      # Plotting & mask visualization
+
+# --- Progress / Utilities ---
+tqdm>=4.65.0           # Progress bars
+requests>=2.31.0       # Checkpoint downloading (functions/ckpt_util.py)
+
+# --- SAM (Segment Anything) ---
+segment-anything>=1.0  # Provides segment_anything (sam_model_registry, SamPredictor)
+
+# --- Optional / Nice-to-have ---
+typing-extensions>=4.7 # Forward compatibility for torch typing
