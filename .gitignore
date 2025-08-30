@@ -2,18 +2,19 @@ __pycache__/
 */__pycache__/
 */**/__pycache__/
 *.pyc
+outputs/
 
 exp/datasets/
 exp/logs/
 exp/outputs/
 exp/image_samples/
 
-reconstruct3D_test.py
 postprocessing.py
-sam_sub2_vis.py
 
 results_img/
-test_dataset.py
-test_ddpm.py
 
 configs/sam_config_old.yaml
+
+test_dataset.py
+test_ddpm.py
+run_multilevel_noise.sh

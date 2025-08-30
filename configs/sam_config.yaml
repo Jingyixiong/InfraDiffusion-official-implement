@@ -1,5 +1,5 @@
 general:
-  infra_group: tunnel  # masonry_bridges or tunnel 
+  infra_group: tunnels  # masonry_bridges or tunnels 
   patch_index: 1115
   use_negative_prompts: false
   iou_threshold: 0.3
@@ -9,15 +9,15 @@ masonry_bridges:
   _target_: datasets.eval.EvaluationDataset
   root: exp/datasets/masonry_bridges
   patch_size: [0.8, 0.8, 0.5]
-  infra_name: begc       # 'hertfordshire' | 'begc' | '*'
+  infra_name: '*'       # 'hertfordshire' | 'begc' | '*'
   sigma_y: 0.16
 
-tunnel:
+tunnels:
   _target_: datasets.eval.EvaluationDataset
   root: exp/datasets/tunnels/wheatly_tunnel
   patch_size: [0.8, 0.8, 0.5]
-  infra_name: S-15       # 'S-15' | 'S-20' | 'S-25' | '*'
-  sigma_y: 0.64
+  infra_name: '*'       # 'S-15' | 'S-20' | 'S-25' | '*'
+  sigma_y: 0.16
 
 # SAMPredictor parameters
 sam:

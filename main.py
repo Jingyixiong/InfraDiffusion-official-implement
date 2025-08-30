@@ -32,12 +32,6 @@ def main(cfg):
     )
     print("InfraDiffusion initialized.")
     runner.sample_ddim()
-
-    # 4. Run a lightweight sample (do not run full sampling in test)
-    assert hasattr(runner, "sample_ddim")
-    print("Ready for sampling. (Skipping actual sampling for test)")
-
-    print("test_main (Hydra pipeline) passed.")
-
+    
 if __name__ == "__main__":
     main()

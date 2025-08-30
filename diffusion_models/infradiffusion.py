@@ -410,7 +410,7 @@ class InfraDiffusion():
             generator=g,
         )
 
-        self.sigma_y_scaled = self.cfg_ir.sigma_y*2
+        self.sigma_y_scaled = self.cfg_ir.sigma_y
         pbar = tqdm.tqdm(val_loader)
 
         for batch in pbar:
